@@ -32,7 +32,7 @@
 - Yleisiä komentoja.
 - Ja lopussa vagrantilla koneiden tyhjentäminen
 
-## a) Asenna Debian 11 Vagrantilla.
+## a) Asenna Debian 11 Vagrantilla. 13:00-13:30
 
 ![image](https://user-images.githubusercontent.com/122887067/229347598-82d82432-87a3-49d3-a036-d19cb0426abb.png)
 
@@ -56,13 +56,55 @@ Käynnistin Windows Powershellin järjestelmänvalvojana ja tein polun C:\Users\
 
 Sain yhteydeyn virtuaalikoneeseen SSH:n kautta.
 
-## b) Asenna artikkelissa (Karvinen 2023) kuvattu kolmen koneen verkko
+## b) Asenna artikkelissa (Karvinen 2023) kuvattu kolmen koneen verkko 13:30-13:45
 
-![image](https://user-images.githubusercontent.com/122887067/229348221-6e7d27d6-1735-4bb5-af77-8bfd6c24059a.png)
+Muokkasin polussa C:\Users\xhild\vagrant\debian olevaa VagrantFile:ä
 
-## c) Hyväksy orjat (t001 ja t002) ohjattavaksi ja testaa yhteys
+![image](https://user-images.githubusercontent.com/122887067/229350528-4648b22b-800e-49fe-a6d2-7910f0bc6095.png)
 
-## d) Näytä esimerkit seuraavista tiloista: package, file, service, user, cmd.run. (voit käyttää state.single)
+Ajoin komennon `vagrant up` ja odotin muutaman minuutin.
+
+Kirjauduin mestari koneelle.
+
+    vagrant ssh tmaster 
+
+## c) Hyväksy orjat (t001 ja t002) ohjattavaksi ja testaa yhteys 13:45-13:50
+
+Hyväksyin orjien avaimet ja kokeilin, että yhteys toimii.
+
+    sudo salt-key -A
+    sudo salt '*' test.ping
+
+![image](https://user-images.githubusercontent.com/122887067/229350794-96e7bf2b-1dc3-40a5-96cf-3e749a5ec079.png)
+
+## d) Näytä esimerkit seuraavista tiloista: package, file, service, user, cmd.run. (voit käyttää state.single) 14:30-15:15
+
+#### Esimerkki package
+Asensin apache2.
+
+![image](https://user-images.githubusercontent.com/122887067/229351184-2c532461-0128-485c-a750-9645552a11a8.png)
+
+#### Esimerkki file
+Tein kansion.
+
+![image](https://user-images.githubusercontent.com/122887067/229350999-ef798ffa-bc55-4642-9baa-724aed629582.png)
+
+#### Esimerkki service
+Laitoin apachen päälle
+
+![image](https://user-images.githubusercontent.com/122887067/229351231-3a71050c-c4ac-4747-9bfc-2e8b4aa0ea56.png)
+
+#### Esimerkki user
+
+Tein käyttäjän.
+
+![image](https://user-images.githubusercontent.com/122887067/229351311-cc2bda5f-e25e-4cdc-acdf-d4ea0132e131.png)
+
+#### Esimerkki cmd.run
+
+Ajoin vielä whoami ja hostnamen orjilla
+
+![image](https://user-images.githubusercontent.com/122887067/229351356-7a177ab2-1a29-4d29-bac4-2133efe28752.png)
 
 ## e) Tee infraa koodina, esim oma hei maailma.
 
