@@ -108,6 +108,11 @@ Ajoin vielä whoami ja hostnamen orjilla
 
 ## e) Tee infraa koodina, esim oma hei maailma.
 
+![image](https://user-images.githubusercontent.com/122887067/229353674-98b074f8-8d45-4468-a8d3-3506cc18ad57.png)
+
+![image](https://user-images.githubusercontent.com/122887067/229353648-53a29a63-f7ba-41d4-859e-c89f07e219e6.png)
+
+
 ## Lähteet
 
 Create a Web Page Using Github (https://terokarvinen.com/2023/create-a-web-page-using-github/)
