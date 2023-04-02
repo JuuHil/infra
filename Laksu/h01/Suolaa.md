@@ -77,7 +77,7 @@ Hyväksyin orjien avaimet ja kokeilin, että yhteys toimii.
 
 ![image](https://user-images.githubusercontent.com/122887067/229350794-96e7bf2b-1dc3-40a5-96cf-3e749a5ec079.png)
 
-## d) Näytä esimerkit seuraavista tiloista: package, file, service, user, cmd.run. (voit käyttää state.single) 14:30-15:15
+## d) Näytä esimerkit seuraavista tiloista: package, file, service, user, cmd.run. (voit käyttää state.single) 14:30-15:00
 
 #### Esimerkki package
 Asensin apache2.
@@ -106,15 +106,28 @@ Ajoin vielä whoami ja hostnamen orjilla
 
 ![image](https://user-images.githubusercontent.com/122887067/229351356-7a177ab2-1a29-4d29-bac4-2133efe28752.png)
 
-## e) Tee infraa koodina, esim oma hei maailma.
+## e) Tee infraa koodina, esim oma hei maailma. 15:00-15:30
+
+Tein kansion `/srv/salt` ja tein sinne hello worldin.
 
 ![image](https://user-images.githubusercontent.com/122887067/229353674-98b074f8-8d45-4468-a8d3-3506cc18ad57.png)
 
+Ajoin tilan Hello. 
+
 ![image](https://user-images.githubusercontent.com/122887067/229353648-53a29a63-f7ba-41d4-859e-c89f07e219e6.png)
 
+Tein `top` tiedoston ja annoin kaikille koneille hello tiedoston.
+
+![image](https://user-images.githubusercontent.com/122887067/229354075-d86c02f9-2c9a-4bf0-8c9e-929a0e5a0b98.png)
 
 ## Lähteet
 
 Create a Web Page Using Github (https://terokarvinen.com/2023/create-a-web-page-using-github/)
 
 Salt Vagrant - automatically provision one master and two slaves (https://terokarvinen.com/2023/salt-vagrant/)
+
+Infra as Code course (https://terokarvinen.com/2023/palvelinten-hallinta-2023-kevat/) 
+
+Tuomas Valkamo - Create Virtual Machines with Vagrant (https://tuomasvalkamo.com/CMS-course/week-6/)
+
+
