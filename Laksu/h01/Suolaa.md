@@ -13,9 +13,10 @@
     OS:   Windows 11 Pro, Versio 22H2
     
     Versiot. 
-    VirtualBox -7.0.6-155176.
+    
     Vagrant 2.3.4
-    debian-live -11.6.0
+    debian 5.10.158-2
+    bullseye 5.10.0-20-amd64
     
 ## x) Lue ja tiivistä
 #### Create a Web Page Using Github 
