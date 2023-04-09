@@ -116,16 +116,32 @@ Tulin exitillä ulos t001 koneelta ja menin masterin puolelle
 Tein uuden kansion ja menin sinne 
 
     vagrant@tmaster:~$ cd /srv/salt/
-    vagrant@tmaster:/srv/salt$ sudo mkdir ssh
-    vagrant@tmaster:/srv/salt$ cd ssh/
+    vagrant@tmaster:/srv/salt$ sudo micro sshd.sls
+    
+    openssh-server:
+    pkg.installed
+    /etc/ssh/sshd_config:
+    file.managed:
+     - source: salt://sshd_config
+    sshd:
+     service.running:
+     - watch:
+         - file: /etc/ssh/sshd_config
+         
+Kopioin masterin sshd tiedoston samaan kansioon 
+   
+    vagrant@tmaster:/srv/salt$ sudo cp /etc/ssh/sshd_config /srv/salt/
+ 
+Testasin 
+    
+![image](https://user-images.githubusercontent.com/122887067/230783563-85b42231-4a4c-4c54-8328-92f5c38ce398.png)
 
-Loin init.sls tiedoston
 
-    vagrant@tmaster:/srv/salt/ssh$ EDITOR=micro sudoedit init.sls
 
-![image](https://user-images.githubusercontent.com/122887067/230780374-68bb7291-60e5-46e3-8575-668e7cdd6b89.png)
 
 Ongelmia  $ sudo salt '*' state.apply sshd. Palaan tehtävään maanantaina
+
+
 
 
 ## c) Tee jokin muu asetus äsken tekemääsi SSH-palveluun. Osoita testein, että Salt käynnistää demonin uudelleen, kun asetustiedosto on muuttunut (jolloin uudet asetukset tulevat voimaan). Osoita, että Saltin ajaminen ei käynnistä demonia uudelleen, jos asetukset eivät ole muuttuneet. (Helpoin asetus on lisätä kolmas portti mukaan, haastavampia löytyy esim 'man sshd_config').
