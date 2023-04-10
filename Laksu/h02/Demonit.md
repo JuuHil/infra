@@ -195,7 +195,7 @@ Palasin tehtävään ja väänsin noin 80min tiedostoja ympäriämpäri kunnes s
 Testi. 
 
     vagrant@tmaster:/srv/salt$ sudo salt '*' state.apply h2/sshd
-
+    
 Toimii!!
 
 ![image](https://user-images.githubusercontent.com/122887067/230987215-ef657060-471c-4001-9027-840c369d8836.png)
