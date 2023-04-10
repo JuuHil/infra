@@ -141,7 +141,66 @@ Testasin
 
 Ongelmia  $ sudo salt '*' state.apply sshd. Palaan tehtävään maanantaina
 
+Maanantai 21:30-
 
+Palasin tehtävään ja väänsin noin 80min tiedostoja ympäriämpäri kunnes sain toimimaan. Tälläisillä asetuksilla.
+
+    vagrant@tmaster:/srv/salt/h2$ ls
+    sshd.sls  sshd_config
+    vagrant@tmaster:/srv/salt/h2$ cat sshd.sls
+    openssh-server:
+      pkg.installed
+    /etc/ssh/sshd_config:
+      file.managed:
+        - source: salt://h2/sshd_config
+    sshd:
+      service.running:
+        - watch:
+         - file: /etc/ssh/sshd_config
+       
+    vagrant@tmaster:/srv/salt/h2$ cat sshd_config
+    # DON'T EDIT - managed file, changes will be overwritten
+    Port 22
+    Port 123
+    Port 8888
+    Protocol 2
+    HostKey /etc/ssh/ssh_host_rsa_key
+    HostKey /etc/ssh/ssh_host_dsa_key
+    HostKey /etc/ssh/ssh_host_ecdsa_key
+    HostKey /etc/ssh/ssh_host_ed25519_key
+    UsePrivilegeSeparation yes
+    KeyRegenerationInterval 3600
+    ServerKeyBits 1024
+    SyslogFacility AUTH
+    LogLevel INFO
+    LoginGraceTime 120
+    PermitRootLogin prohibit-password
+    StrictModes yes
+    RSAAuthentication yes
+    PubkeyAuthentication yes
+    IgnoreRhosts yes
+    RhostsRSAAuthentication no
+    HostbasedAuthentication no
+    PermitEmptyPasswords no
+    ChallengeResponseAuthentication no
+    X11Forwarding yes
+    X11DisplayOffset 10
+    PrintMotd no
+    PrintLastLog yes
+    TCPKeepAlive yes
+    AcceptEnv LANG LC_*
+    Subsystem sftp /usr/lib/openssh/sftp-server
+    UsePAM yes
+
+Testi. 
+
+    vagrant@tmaster:/srv/salt$ sudo salt '*' state.apply h2/sshd
+
+Toimii!!
+
+![image](https://user-images.githubusercontent.com/122887067/230987215-ef657060-471c-4001-9027-840c369d8836.png)
+
+    sudo systemctl restart ssh
 
 
 ## c) Tee jokin muu asetus äsken tekemääsi SSH-palveluun. Osoita testein, että Salt käynnistää demonin uudelleen, kun asetustiedosto on muuttunut (jolloin uudet asetukset tulevat voimaan). Osoita, että Saltin ajaminen ei käynnistä demonia uudelleen, jos asetukset eivät ole muuttuneet. (Helpoin asetus on lisätä kolmas portti mukaan, haastavampia löytyy esim 'man sshd_config').
