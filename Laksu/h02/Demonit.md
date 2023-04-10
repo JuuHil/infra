@@ -202,11 +202,27 @@ Toimii!!
 
     sudo systemctl restart ssh
 
+Portit toimivat, mutta en saanut publickeytä toimimaan.
+
+![image](https://user-images.githubusercontent.com/122887067/230989197-106362a1-b16f-478f-97ba-94b6e3146153.png)
+
 
 ## c) Tee jokin muu asetus äsken tekemääsi SSH-palveluun. Osoita testein, että Salt käynnistää demonin uudelleen, kun asetustiedosto on muuttunut (jolloin uudet asetukset tulevat voimaan). Osoita, että Saltin ajaminen ei käynnistä demonia uudelleen, jos asetukset eivät ole muuttuneet. (Helpoin asetus on lisätä kolmas portti mukaan, haastavampia löytyy esim 'man sshd_config').
 
+Lisäsin edellisen tehtävän vaiheissa jo kolmannen portin mukaan.
+
+![image](https://user-images.githubusercontent.com/122887067/230989298-f7214db8-f073-447f-9854-a71f61d5cff3.png)
+
 
 ## Lähteet
+
 https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=salt%20ssh
 
-![image](https://user-images.githubusercontent.com/122887067/230779197-3390847b-c5f9-460f-92bb-4823500f5c94.png)
+https://terokarvinen.com/2023/salt-vagrant/
+
+https://myllys.wordpress.com/palvelinten-hallinta-harjoitus-2-spring-2021/
+
+## Erityiskiitokset
+
+![image](https://user-images.githubusercontent.com/122887067/230989583-a02a25c9-d939-487a-9b12-eb8eb3f5658a.png)
+
