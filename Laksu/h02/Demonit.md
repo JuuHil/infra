@@ -141,7 +141,7 @@ Testasin
 
 Ongelmia  $ sudo salt '*' state.apply sshd. Palaan tehtävään maanantaina
 
-Maanantai 21:30-
+Maanantai 21:30-23:15
 
 Palasin tehtävään ja väänsin noin 80min tiedostoja ympäriämpäri kunnes sain toimimaan. Tälläisillä asetuksilla.
 
