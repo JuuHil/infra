@@ -28,6 +28,8 @@ Käytin GNU3.0 lisenssiä.
 
 ![image](https://user-images.githubusercontent.com/122887067/232316091-1f7c0ead-0b9c-4922-819e-e3693b8f26c8.png)
 
+https://github.com/JuuHil/summertime
+
 ## b) Dolly. Kloonaa edellisessä kohdassa tehty uusi varasto itsellesi, tee muutoksia, puske ne palvelimelle, ja näytä, että ne ilmestyvät weppiliittymään. 16:45-17:20
 Teen harjoituksen Windows 11 Pro (Versio 22H2)
 
@@ -134,12 +136,16 @@ Ajoin vielä komennon `git log --patch`
 Lokista selvenee 
 
 commit: numerokirjain sarja
+
 Author: kuka muokkasi
+
 Date: päivämäärä ja kellonaika
+
 diff --git: mikä muuttui
+
 +commit push pull : tiedostoon lisätty teksti.
 
+
+
 ## Lähteet 
-
-
 https://terokarvinen.com/2023/palvelinten-hallinta-2023-kevat/
