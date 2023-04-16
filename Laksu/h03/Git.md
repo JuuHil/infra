@@ -109,7 +109,7 @@ Uusi tekstitiedosto tuli GitHubiin.
 ![image](https://user-images.githubusercontent.com/122887067/232319407-7191e0a3-b45d-4927-a88a-3ee778755773.png)
 
 
-## c) Doh! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia. 17:20
+## c) Doh! Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset --hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia. 17:20-17:30
 
 Kävin lisäämässä b) kohdassa luotuun tekstitiedostoon tekstin "tyhmä muutos"
 
@@ -123,7 +123,7 @@ jonka jälkeen tein hard resetin ja katsoin catilla tiedoston sisään.
 
 ![image](https://user-images.githubusercontent.com/122887067/232319736-9bce5be3-b168-4aed-921a-c24872f1dabd.png)
 
-## d) Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköpostiosoitteesi näkyy haluamallasi tavalla ja korjaa tarvittaessa.
+## d) Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköpostiosoitteesi näkyy haluamallasi tavalla ja korjaa tarvittaessa. 17:30-17:40
 
 Lokissa on nimi ja sähköpostiosoite oikein. Kellokin on oikeassa.
 
