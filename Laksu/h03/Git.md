@@ -135,13 +135,13 @@ Ajoin vielä komennon `git log --patch`
 
 Lokista selvenee 
 
-commit: numerokirjain sarja
+commit: id:n lohkoketju numero
 
 Author: kuka muokkasi
 
 Date: päivämäärä ja kellonaika
 
-diff --git: mikä muuttui
+diff --git: mikä muuttui a ja b välillä.
 
 +commit push pull : tiedostoon lisätty teksti.
 
