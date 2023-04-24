@@ -1,4 +1,4 @@
-# Git
+# Komennus
 
 ## Tehtävät
 
@@ -182,7 +182,7 @@ Testit.
 
 ![image](https://user-images.githubusercontent.com/122887067/233971722-8bcc9288-3e8b-48b7-8c65-37c6aa00e114.png)
 
-## d) Asenna jokin yhden binäärin ohjelma Saltilla orjille. 13:35-
+## d) Asenna jokin yhden binäärin ohjelma Saltilla orjille. 13:35-13:55
 
 Orjilla ei ole vielä microa, joten asennan sen.
 
