@@ -127,7 +127,7 @@ Mutta siinä meni jotain pieleen.
 
 ![image](https://user-images.githubusercontent.com/122887067/235479686-3e31a498-2188-4d0b-9827-b9ce7a6c4295.png)
 
-
+Ongelma taisi olla se etten tehnyt `\Salt Project\Salt` alle `\srv\salt\` polkua. Jatkan tiistaina.
 
 ## Lähteet
 https://terokarvinen.com/2018/control-windows-with-salt/
