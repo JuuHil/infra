@@ -133,3 +133,5 @@ Ongelma taisi olla se etten tehnyt `\Salt Project\Salt` alle `\srv\salt\` polkua
 https://terokarvinen.com/2018/control-windows-with-salt/
 
 https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/windows.html
+
+https://salthomework.wordpress.com/h5/
