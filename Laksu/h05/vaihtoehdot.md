@@ -78,24 +78,61 @@ Ajoin komennon `.\salt-call.exe --local state.single cmd.run 'whoami'`
     Total states run:     1
     Total run time:  20.368 ms
     
-## c) Hei ikkuna! Tee hei maailma Windowsin Saltille. Voit vaikkapa tehdä tyhjän tiedoston johonkin väliaikaistiedostojen kansioon. Käytä idempotentteja komentoja, esim file.managed. 17:55-18:15
+## c) Hei ikkuna! Tee hei maailma Windowsin Saltille. Voit vaikkapa tehdä tyhjän tiedoston johonkin väliaikaistiedostojen kansioon. Käytä idempotentteja komentoja, esim file.managed. 13:00-13:30
 
-Tein E: levylle tyhjän tiedoston nimeltä heimaailma komennolla ` .\salt-call.exe --local state.single file.managed E:\heimaailma`
+Tavoitteena on kopioida tyhjä tekstitiedosto toiselle levylle.
 
-    PS C:\Program Files\Salt Project\Salt> .\salt-call.exe --local state.single file.managed E:\heimaailma
-    [WARNING ] State for file: E:\heimaailma - Neither 'source' nor 'contents' nor 'contents_pillar' nor 'contents_grains' was defined, yet 'replace' was set to 'True'. As there is no source to replace the file with, 'replace' has been set to 'False' to avoid reading the file unnecessarily.
+Aloitin tekemällä tyhjän teksti tiedoston `C:\Users\xhild\tekstit\empty.txt`
+
+Tein käyttäjälle myös kansion nimeltä suola `C:\Users\xhild\suola`
+
+Suola kansioon tein kansion ´maailma´ ja sen sisälle ´init.sls´
+
+init.sls sisältö
+
+    E:/Heisuola/empty.txt:
+      file.managed:
+      - source: "C:\Users\xhild\tekstit\empty.txt"
+      
+Ajoin komennon `salt-call --file-root=C:\Users\xhild\suola --local state.apply 'maailma'`
+
+Mutta sain vastaukseksi 
+    PS C:\Program Files\Salt Project\Salt> salt-call --file-root=C:\Users\xhild\suola --local state.apply 'maailma'
+    [CRITICAL] Rendering SLS 'base:maailma' failed: expected escape sequence of 8 hexdecimal numbers, but found 's'; line 3
+
+    ---
+    E:/Heisuola/empty.txt:
+      file.managed:
+      - source: "C:\Users\xhild\tekstit\empty.txt"     <======================
+    ---
+    local:
+        Data failed to compile:
+    ----------
+        Rendering SLS 'base:maailma' failed: expected escape sequence of 8 hexdecimal numbers, but found 's'; line 3
+
+Hetken ihmeteltyäni kopion ChatGPT ylemmän viestin. ChatGPT osasi kertoa, "Tämä virhe johtuu siitä, että käytetyssä tiedostopolussa on merkkejä, joita ei ole asianmukaisesti pakattu tai käsitelty. Merkit, kuten kenoviiva tai kaksoislainausmerkit voivat aiheuttaa tämän virheen." Joten vaihdoin kenoviivat sourcesta kauttaviivoiksi.
+
+Toimiva init.sls
+
+    E:/Heisuola/empty.txt:
+      file.managed:
+      - source: "C:/Users/xhild/tekstit/empty.txt"
+
+Ajoin salt-callin uudestaan ja se toimii
+
+    PS C:\Program Files\Salt Project\Salt> salt-call --file-root=C:\Users\xhild\suola --local state.apply 'maailma'
     local:
     ----------
-              ID: E:\heimaailma
+              ID: E:/Heisuola/empty.txt
         Function: file.managed
           Result: True
-         Comment: Empty file
-         Started: 17:57:30.104524
-        Duration: 13.671 ms
+         Comment: File E:/Heisuola/empty.txt updated
+         Started: 13:24:38.844252
+        Duration: 17.613 ms
          Changes:
                   ----------
-                  new:
-                      file E:\heimaailma created
+                  diff:
+                      New file
 
     Summary for local
     ------------
@@ -103,31 +140,20 @@ Tein E: levylle tyhjän tiedoston nimeltä heimaailma komennolla ` .\salt-call.e
     Failed:    0
     ------------
     Total states run:     1
-    Total run time:  13.671 ms
-   
-## d) Installed. Asenna Windowsille ohjelma Saltilla. (Voit käyttää eri vaihtoehtoja: kopioida binäärin suoraan sopivaan kansioon, pkg.installed ja choco, pkg.installed ja salt winrepo). 18:15-19:00
+    Total run time:  17.613 ms
+    
+Empty.txt oli luotu 13:24 
 
-Micron asennus.
+![image](https://user-images.githubusercontent.com/122887067/236435687-ecd07e67-8087-41ab-9fb5-ca22c39e2743.png)
 
-Ensin etsin binääri tiedoston microlle. Se löytyy GitHubista.
+## d) Installed. Asenna Windowsille ohjelma Saltilla. (Voit käyttää eri vaihtoehtoja: kopioida binäärin suoraan sopivaan kansioon, pkg.installed ja choco, pkg.installed ja salt winrepo). 13:30
 
-https://github.com/zyedidia/micro/releases/tag/v2.0.11
+Aloitin asentamalla Windows virtuaalikoneen. Latauslinkki: https://aka.ms/windev_VM_virtualbox Lähde: https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
 
-![image](https://user-images.githubusercontent.com/122887067/235475212-6690eeb3-979e-44f2-bb1f-9c518e21d9e1.png)
+Tiedosto oli suuri (21.1GB) joten latauksessa kesti pitkään (15min, 200Mbit/s).
 
-asensin `micro-2.0.11-amd64.deb`  C:\Program Files\Salt Project\Salt\ alle.
+Käytän H01 tehtävässä tehtyä `tmaster ` konetta herrana uudelle Windows orjalle.
 
-En saanut purettua .deb tiedostoa.
-
-Kokeilin luoda init.sls tiedoston. 
-
-![image](https://user-images.githubusercontent.com/122887067/235479485-a3a75934-bc08-4170-92f3-62d97bcfedd7.png)
-
-Mutta siinä meni jotain pieleen. 
-
-![image](https://user-images.githubusercontent.com/122887067/235479686-3e31a498-2188-4d0b-9827-b9ce7a6c4295.png)
-
-Ongelma taisi olla se etten tehnyt `\Salt Project\Salt` alle `\srv\salt\` polkua. Jatkan tiistaina.
 
 ## Lähteet
 https://terokarvinen.com/2018/control-windows-with-salt/
