@@ -154,6 +154,9 @@ Tiedosto oli suuri (21.1GB) joten latauksessa kesti pitkään (15min, 200Mbit/s)
 
 Käytän H01 tehtävässä tehtyä `tmaster ` konetta herrana uudelle Windows orjalle.
 
+VirtualBoxin Import appliance ei löytänyt zipattuna tiedostoa joten jouduin vielä purkamaan sen. (noin 10min)
+
+Ova tiedoston import kesti vielä noin 
 
 ## Lähteet
 https://terokarvinen.com/2018/control-windows-with-salt/
