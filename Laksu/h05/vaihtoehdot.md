@@ -156,7 +156,11 @@ Käytän H01 tehtävässä tehtyä `tmaster ` konetta herrana uudelle Windows or
 
 VirtualBoxin Import appliance ei löytänyt zipattuna tiedostoa joten jouduin vielä purkamaan sen. (noin 10min)
 
-Ova tiedoston import kesti vielä noin 
+Ova tiedoston import vaiheessa tuli uusi ongelma
+
+![image](https://user-images.githubusercontent.com/122887067/236446737-694e2e97-4fc1-4a99-b126-469283632391.png)
+
+Kokeilin kaksi kertaa ja molemmilla kerroilla noin 10minuutin (35-40%) kohdalla tuli sama error.
 
 ## Lähteet
 https://terokarvinen.com/2018/control-windows-with-salt/
